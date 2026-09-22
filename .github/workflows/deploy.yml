@@ -27,24 +27,17 @@ jobs:
         run: |
           unzip -o "alyah_style (3).zip" -d project
 
-      - name: Show project structure
-        run: |
-          echo "=== PUBSPEC ==="
-          find project -maxdepth 4 -type f -name "pubspec.yaml" -print
-          echo "=== FOLDERS ==="
-          find project -maxdepth 2 -type d -print
-
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
           channel: stable
 
       - name: Get packages
-        working-directory: project
+        working-directory: project/alyah_style
         run: flutter pub get
 
       - name: Build web
-        working-directory: project
+        working-directory: project/alyah_style
         run: flutter build web --base-href "/ask-alyah/"
 
       - name: Setup Pages
@@ -53,7 +46,7 @@ jobs:
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: project/build/web
+          path: project/alyah_style/build/web
 
       - name: Deploy to GitHub Pages
         id: deployment
