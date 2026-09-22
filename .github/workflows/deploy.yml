@@ -32,6 +32,11 @@ jobs:
         with:
           channel: stable
 
+      - name: Fix intl version
+        working-directory: project/alyah_style
+        run: |
+          sed -i 's/intl: 0.20.2/intl: ^0.20.3/' pubspec.yaml
+
       - name: Get packages
         working-directory: project/alyah_style
         run: flutter pub get
