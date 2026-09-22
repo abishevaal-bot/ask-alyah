@@ -26,8 +26,8 @@ jobs:
       - name: Unzip project
         run: |
           unzip -o "alyah_style (3).zip" -d project
-          
-       - name: Show project structure
+
+      - name: Show project structure
         run: |
           echo "=== PUBSPEC ==="
           find project -maxdepth 4 -type f -name "pubspec.yaml" -print
