@@ -25,7 +25,7 @@ jobs:
 
       - name: Unzip project
         run: |
-          unzip -o "alyah_style (3).zip" -d project
+          unzip -o "alyah_style_fixed.zip" -d project
 
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
